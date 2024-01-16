@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* --header-bg-color: #fff; */
+  /* --main-bg-color: #fff; */
+  /* main-text-color: #fff; */
+}
+
+/* GENERAL */
+html {
+  box-sizing: border-box;
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  background-color: #fff;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1180px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.jakarta {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+}
+
+.urbanist {
+  font-family: "Urbanist";
+  font-style: normal;
+  font-weight: 500;
+}
+
+.inter {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+}
+
+.poppins{
+  font-family: 'Poppins';
+  font-style: normal;
+}
+.linearbtn {
+  background: linear-gradient(97deg, #4d34e3 8%, #e93470 91%);
+}
+
+.hero-title {
+  background: linear-gradient(269deg, #f43366 0.72%, #3c33ef 103.58%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-title {
+  font-family: "Plus Jakarta Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 160%; /* 22.4px */
+  letter-spacing: 2.1px;
+  background: linear-gradient(91deg, #5635dd -2.48%, #e63573 99.68%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
