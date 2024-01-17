@@ -1,8 +1,8 @@
 import React from "react";
 
-const Title = ({ text }) => {
+const Title = ({ text, className }) => {
   return (
-    <span className="section-title mb-[6px]">
+    <span className={`section-title mb-[6px] ${className}`}>
       {text}
     </span>
   );
