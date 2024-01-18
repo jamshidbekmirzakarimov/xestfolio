@@ -19,7 +19,7 @@ const Portfolio = () => {
             </div>
             <div>
               <Button
-                className={"urbanist"}
+                className={"urbanist text-white"}
                 className2={"urbanist"}
                 text={"Load More"}
               />

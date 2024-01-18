@@ -6,6 +6,22 @@ import BlogImg from "../../assets/Images/blog-img.jpg";
 import BlogImg2 from "../../assets/Images/blog-img2.jpg";
 import Arrow from "../../assets/Svg/arrow.svg";
 const LatestBlog = () => {
+  const cardData = [
+    {
+      imageSrc: BlogImg,
+      date: "UI Design | 22 May 2023",
+      title: "What is UI Design in Front End Design?",
+      description:
+        "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system",
+    },
+    {
+      imageSrc: BlogImg2,
+      date: "UI Design | 22 May 2023",
+      title: "What is UI Design in Front End Design?",
+      description:
+        "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system",
+    },
+  ];
   return (
     <>
       <section className="bg-[#181818] pt-[92px] pb-[138px] -z-40">
@@ -19,7 +35,7 @@ const LatestBlog = () => {
             </div>
             <div>
               <Button
-                className={"urbanist bg-white text-black"}
+                className={"urbanist bg-white"}
                 className2={"urbanist"}
                 text={"Load More"}
               />

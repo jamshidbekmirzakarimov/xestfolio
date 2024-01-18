@@ -1,3 +1,4 @@
+import Faqs from '@/Modules/Faqs/Faqs'
 import Features from '@/Modules/Features/Features'
 import Hero from '@/Modules/Hero/Hero'
 import LatestBlog from '@/Modules/LatestBlog/LatestBlog'
@@ -15,6 +16,7 @@ const Home = () => {
       <Portfolio/>
       <LatestBlog/>
       <Testimonials/>
+      <Faqs/>
     </div>
   )
 }

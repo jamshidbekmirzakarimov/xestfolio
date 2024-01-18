@@ -17,7 +17,7 @@ const Hero = () => {
                 Award Wining product designer based in Georgia. We create
                 user-friendly interfaces for fast-growing startups.
               </p>
-              <Button className={"urbanist"} className2={"urbanist"} text={"Book A Call"}/>
+              <Button  className={"urbanist text-white"} className2={"urbanist"} text={"Book A Call"}/>
             </div>
             <Image className="ms-[-80px] -z-40 w-[560px] h-[699px]" src={HeroImg} alt="" />
           </div>

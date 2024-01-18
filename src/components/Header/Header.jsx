@@ -24,7 +24,7 @@ const Header = () => {
                 </li>
               </ul>
             </nav>
-            <Button text={"Contact Me"} />
+            <Button className={"text-white"} text={"Contact Me"} />
           </div>
         </div>
       </div>

@@ -61,7 +61,11 @@ const Features = () => {
                 Thankfully, we can do that. I design products that are more than
                 pretty. I make them shippable and usable.
               </p>
-              <Button className={"urbanist"} className2={"urbanist"} text={"Contact US"} />
+              <Button
+                className={"urbanist text-white"}
+                className2={"urbanist"}
+                text={"Contact US"}
+              />
             </div>
             <ul className="grid grid-cols-2 grid-rows-2 gap-y-[49px] gap-x-[29px] mt-[40px]">
               {featuresData.map((feature, index) => (
@@ -90,9 +94,7 @@ const Features = () => {
           <ul className="flex items-center justify-between">
             {featuresData2.map((feature, index) => (
               <li key={index} className="flex items-center flex-col">
-                <h3 className={`features-numbers`}>
-                  {feature.number}
-                </h3>
+                <h3 className={`features-numbers`}>{feature.number}</h3>
                 <p className="text-[#000] jakarta text-[16px] font-semibold leading-[140%]">
                   {feature.text}
                 </p>
