@@ -9,10 +9,10 @@ const Hero = () => {
         <div className="container">
           <div className="flex items-center">
             <div>
-              <h2 className="jakarta uppercase text-[170px] font-extrabold leading-[95%] tracking-[-8.5px] mb-[30px]">
+              <h1 className="jakarta uppercase text-[170px] font-extrabold leading-[95%] tracking-[-8.5px] mb-[30px]">
                 <span className="hero-title">Miami</span> Walke
                 <span className="text-white">r</span>
-              </h2>
+              </h1>
               <p className="jakarta max-w-[550px] text-[20px] text-[#666] font-normal leading-[33px] mb-[63px]">
                 Award Wining product designer based in Georgia. We create
                 user-friendly interfaces for fast-growing startups.

@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import Solution from "../../assets/Svg/arrow-bottom.svg";
 import Image from "next/image";
 import "./Faqs.scss";
+import Title from "@/UI/Title/Title";
 
 const Solutions = () => {
   useEffect(() => {
@@ -80,7 +81,17 @@ const Solutions = () => {
               </details>
             ))}
           </div>
-          sdfgggt
+          <div>
+            <Title text={"FAQs"} />
+            <h3 className="poppins max-w-[415px] w-full text-white font-semibold text-[40px] leading-[135%] mb-[24px]">
+              Be Kind to Your Mind Question & Answer
+            </h3>
+            <p className="jakarta text-[#aaa] font-medium leading-[144%] text-[16px] max-w-[470px] w-full">
+              All Your Qustions are in A document, in question and answer
+              format, that introduces newcomers to a topic or answers common
+              questions.
+            </p>
+          </div>
         </div>
       </div>
     </section>
