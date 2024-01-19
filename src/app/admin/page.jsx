@@ -2,13 +2,21 @@
 import { useRouter } from "next/navigation";
 import { isExpired } from "react-jwt";
 const Admin = () => {
-  const isMyTokenExpired = isExpired(localStorage.getItem("jwt"));
+  const token = localStorage.getItem("jwt");
   const router = useRouter();
-  if (isMyTokenExpired) {
+  if (token) {
+    const isMyTokenExpired = isExpired(token);
+    if (isMyTokenExpired) {
+      localStorage.removeItem("jwt");
+      router.push("/login");
+      return;
+    }
+  }
+  if (!token) {
     localStorage.removeItem("jwt");
     router.push("/login");
     return;
-  } 
+  }
 
   return <div>Admin</div>;
 };
