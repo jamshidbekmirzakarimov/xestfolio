@@ -9,13 +9,15 @@ const Login = () => {
     formState: { errors },
   } = useForm();
   const router = useRouter();
-  if (localStorage.getItem("jwt") !== null) {
-    const isMyTokenExpired = isExpired(localStorage.getItem("jwt"));
-    if (isMyTokenExpired) {
-      localStorage.removeItem("jwt");
-    } else {
-      router.push("/admin");
-      return;
+  if (typeof window !== "undefined") {
+    if (localStorage.getItem("jwt") !== null) {
+      const isMyTokenExpired = isExpired(localStorage.getItem("jwt"));
+      if (isMyTokenExpired) {
+        localStorage.removeItem("jwt");
+      } else {
+        router.push("/admin");
+        return;
+      }
     }
   }
 
