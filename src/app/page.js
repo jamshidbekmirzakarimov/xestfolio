@@ -10,7 +10,7 @@ import React from 'react'
 
 const Home = () => {
   return (
-    <div >
+    < >
       <Hero/>
       <TrustedBy/>
       <Features/>
@@ -19,7 +19,7 @@ const Home = () => {
       <Testimonials/>
       <Faqs/>
       <Project/>
-    </div>
+    </>
   )
 }
 

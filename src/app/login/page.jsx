@@ -2,6 +2,8 @@
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { isExpired } from "react-jwt";
+import axios from "../api/api";
+import useRole from "@/store/useRole";
 const Login = () => {
   const {
     register,
@@ -9,6 +11,8 @@ const Login = () => {
     formState: { errors },
   } = useForm();
   const router = useRouter();
+  const changeRole = useRole((state) => state.changeRole);
+
   if (typeof window !== "undefined") {
     if (localStorage.getItem("jwt") !== null) {
       const isMyTokenExpired = isExpired(localStorage.getItem("jwt"));
@@ -22,19 +26,24 @@ const Login = () => {
   }
 
   const onSubmit = (data) => {
-    fetch("http://192.168.0.121:8000/user/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    })
-      .then((response) => response.json())
-      .then((responseData) => {
+    axios
+      .post("/user/login", data, {
+        headers: { "Content-Type": "application/json" },
+      })
+      .then((response) => {
+        const responseData = response.data;
         if (responseData) {
+          changeRole();
           localStorage.setItem("jwt", responseData.jwt);
           router.push("/admin");
         }
+      })
+      .catch((error) => {
+        console.error(error);
       });
+    console.log(responseData, "bu datacha");
   };
+
   return (
     <>
       <section className="min-h-[80vh]">

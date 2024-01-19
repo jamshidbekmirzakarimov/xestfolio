@@ -14,8 +14,8 @@ const Admin = () => {
       }
     }
     if (!token) {
-      localStorage.removeItem("jwt");
       router.push("/login");
+      localStorage.removeItem("jwt");
       return;
     }
   }
