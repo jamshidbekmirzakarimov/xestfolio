@@ -9,7 +9,7 @@ import AdminHeader from "../AdminHeader/AdminHeader";
 
 const Layout = ({ children }) => {
   const role = useRole((state) => state.role);
-
+console.log(role, "bu rol");
   return (
     <>
       {role ? (
@@ -40,7 +40,7 @@ export const UserLayout = ({ children }) => {
         <SideBar />
         <div className="w-full">
           <AdminHeader />
-          <div>{children}</div>
+          <div className="px-[20px] h-[92vh] pt-[20px]">{children}</div>
         </div>
       </div>
     </>

@@ -4,6 +4,8 @@ import { useForm } from "react-hook-form";
 import { isExpired } from "react-jwt";
 import axios from "../api/api";
 import useRole from "@/store/useRole";
+import { Auth } from "@/service/Auth";
+import { colors } from "../admin/blog/helpers";
 const Login = () => {
   const {
     register,
@@ -19,7 +21,7 @@ const Login = () => {
       if (isMyTokenExpired) {
         localStorage.removeItem("jwt");
       } else {
-        router.push("/admin");
+        router.push("/admin/dashboard");
         return;
       }
     }
@@ -35,13 +37,12 @@ const Login = () => {
         if (responseData) {
           changeRole();
           localStorage.setItem("jwt", responseData.jwt);
-          router.push("/admin");
+          router.push("/admin/dashboard");
         }
       })
       .catch((error) => {
         console.error(error);
       });
-    console.log(responseData, "bu datacha");
   };
 
   return (
@@ -52,7 +53,7 @@ const Login = () => {
           className="flex items-center justify-center flex-col h-full gap-[30px]"
         >
           <div className="border-[1px] border-[#aaa] p-[30px] flex flex-col gap-[15px] rounded-[20px]">
-            <h2 className="text-[30px]">Login</h2>
+            <h2 className="text-[30px]" style={{color: colors.yellow}}>Login{Auth.companyName}</h2>
             <input
               className="border-[1px] border-[#000] ps-[15px] w-[400px] h-[50px] outline-none "
               type="email"

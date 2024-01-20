@@ -1,7 +1,7 @@
 import Button from "@/UI/Button/Button";
 import Title from "@/UI/Title/Title";
 import React from "react";
-import FeaturesImg from "../../assets/Images/features-img.jpg";
+import FeaturesImg from "../../assets/Images/features-img.png";
 import Image from "next/image";
 const Features = () => {
   const featuresData = [
@@ -67,13 +67,13 @@ const Features = () => {
                 text={"Contact US"}
               />
             </div>
-            <ul className="grid grid-cols-2 grid-rows-2 gap-y-[49px] gap-x-[29px] mt-[40px]">
+            <ul className="grid grid-cols-2 grid-rows-2 gap-y-[49px] gap-x-[29px] mt-[55px]">
               {featuresData.map((feature, index) => (
                 <li
                   key={index}
-                  className={`w-[270px] ${index % 2 === 1 ? "mt-[-50px]" : ""}`}
+                  className={`w-[270px] ${index % 2 === 1 ? "mt-[-60px]" : ""}`}
                 >
-                  <div className="overflow-hidden mb-[7px]">
+                  <div className="overflow-hidden mb-[7px] rounded-[10px] rounded-tl-none rounded-br-none">
                     <Image
                       className="grayscale hover:grayscale-0 cursor-pointer duration-300 hover:scale-125"
                       src={FeaturesImg}
