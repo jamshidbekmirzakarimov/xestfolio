@@ -1,6 +1,6 @@
 import { status } from "zustand";
 
-const useStatus = create((set) => ({
+const useStatus = status((set) => ({
   isStatus: true,
   changeStatusType: () => set(() => ({ isStatus: false })),
 }));

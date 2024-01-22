@@ -1,19 +1,21 @@
-"use client";
+"use client"
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { isExpired } from "react-jwt";
-import axios from "../api/api";
 import useRole from "@/store/useRole";
-import { Auth } from "@/service/Auth";
 import { colors } from "../admin/blog/helpers";
+import useAuth from "@/service/useAuth";
+
+
 const Login = () => {
+  const { login } = useAuth();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
   const router = useRouter();
-  const changeRole = useRole((state) => state.changeRole);
+
 
   if (typeof window !== "undefined") {
     if (localStorage.getItem("jwt") !== null) {
@@ -22,27 +24,13 @@ const Login = () => {
         localStorage.removeItem("jwt");
       } else {
         router.push("/admin/dashboard");
-        return;
+        return null;
       }
     }
   }
 
   const onSubmit = (data) => {
-    axios
-      .post("/user/login", data, {
-        headers: { "Content-Type": "application/json" },
-      })
-      .then((response) => {
-        const responseData = response.data;
-        if (responseData) {
-          changeRole();
-          localStorage.setItem("jwt", responseData.jwt);
-          router.push("/admin/dashboard");
-        }
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    login(data);
   };
 
   return (
@@ -53,9 +41,11 @@ const Login = () => {
           className="flex items-center justify-center flex-col h-full gap-[30px]"
         >
           <div className="border-[1px] border-[#aaa] p-[30px] flex flex-col gap-[15px] rounded-[20px]">
-            <h2 className="text-[30px]" style={{color: colors.yellow}}>Login{Auth.companyName}</h2>
+            <h2 className="text-[30px]" style={{ color: colors.yellow }}>
+              Login
+            </h2>
             <input
-              className="border-[1px] border-[#000] ps-[15px] w-[400px] h-[50px] outline-none "
+              className="border-[1px] border-[#000] ps-[15px] w-[400px] h-[50px] outline-none"
               type="email"
               placeholder="Enter your email"
               {...register("email", {
@@ -64,7 +54,7 @@ const Login = () => {
             />
             <div>
               <input
-                className="border-[1px] border-[#000] ps-[15px] w-[400px] h-[50px] outline-none "
+                className="border-[1px] border-[#000] ps-[15px] w-[400px] h-[50px] outline-none"
                 type="password"
                 placeholder="Enter your password"
                 {...register("password", {
@@ -72,7 +62,7 @@ const Login = () => {
                 })}
               />
             </div>
-            {errors.exampleRequired && <span>This field is required</span>}
+            {errors.email && <span>{errors.email.message}</span>}
 
             <input
               type="submit"

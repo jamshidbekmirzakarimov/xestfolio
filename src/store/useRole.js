@@ -1,8 +1,8 @@
 import { create } from "zustand";
 
 const useRole = create((set) => ({
-  role: false,
-  changeRole: () => set(() => ({ role: true })),
+  role: true,
+  changeRole: () => set(() => ({ role: false })),
 }));
 
 export default useRole;
